@@ -1,0 +1,24 @@
+{
+    "name": "tentapress/users",
+    "type": "library",
+    "license": "MIT",
+    "require": {
+        "php": "^8.2",
+        "tentapress/system": "*",
+        "tentapress/admin-shell": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "TentaPress\\Users\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "TentaPress\\Users\\UsersServiceProvider"
+            ]
+        }
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true
+}
