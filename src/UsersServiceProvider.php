@@ -6,6 +6,7 @@ namespace TentaPress\Users;
 
 use Illuminate\Support\Facades\Gate;
 use Illuminate\Support\ServiceProvider;
+use TentaPress\Users\Console\MakeAdminUserCommand;
 use TentaPress\Users\Console\PermissionsCommand;
 use TentaPress\Users\Database\SeedPermissions;
 use TentaPress\Users\Models\TpUser;
@@ -48,6 +49,7 @@ final class UsersServiceProvider extends ServiceProvider
 
         if ($this->app->runningInConsole()) {
             $this->commands([
+                MakeAdminUserCommand::class,
                 PermissionsCommand::class,
             ]);
         }
