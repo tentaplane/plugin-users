@@ -19,7 +19,7 @@ trait HasRolesCapabilities
     {
         return $this->belongsToMany(
             TpRole::class,
-            'tp_user_role',
+            'tp_user_roles',
             'user_id',
             'role_id'
         );
@@ -60,9 +60,9 @@ trait HasRolesCapabilities
             return $this->tpCapabilityCache = [];
         }
 
-        $keys = DB::table('tp_user_role')
-            ->join('tp_role_capability', 'tp_user_role.role_id', '=', 'tp_role_capability.role_id')
-            ->where('tp_user_role.user_id', $userId)
+        $keys = DB::table('tp_user_roles')
+            ->join('tp_role_capability', 'tp_user_roles.role_id', '=', 'tp_role_capability.role_id')
+            ->where('tp_user_roles.user_id', $userId)
             ->pluck('tp_role_capability.capability_key')
             ->all();
 

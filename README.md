@@ -5,7 +5,7 @@ Users, roles, capabilities and admin authentication.
 ## Plugin details
 
 - ID: `tentapress/users`
-- Version: `0.1.3`
+- Version: `0.1.4`
 - Service provider: `TentaPress\Users\UsersServiceProvider`
 
 ## Requirements
